@@ -1,6 +1,11 @@
 import './style.css';
-import retreiveData from './involvementAPI.js';
+// import retreiveData from './involvementAPI.js';
+import displayComments from './showComments.js';
 
 
-retreiveData;
+const refreshButton = document.getElementById('refresh');
 
+refreshButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  displayComments();
+});

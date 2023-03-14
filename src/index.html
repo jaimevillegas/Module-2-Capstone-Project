@@ -44,18 +44,26 @@
       <p id='image-description'>Awesome Image Description Lorem ipsum dolor sit amet, qui minim labore adipisicing minim
         sint cillum sint consectetur cupidatat.</p>
       <p>Photographer: <span id='photographer'>AWESOME_PHOTOGRAPHER</span></p>
-      <h2>Comments <span id='comments-number'>(2)</span></h2>
+      <h2 class='comments-title'>Comments <span id='comments-number'>(2)</span></h2>
       <div class="comments-wrapper">
         <ul class='comment-list'>
-          <li>Comment 1</li>
-          <li>Comment 2</li>
-          <li>Comment 3</li>
+          <!-- THIS SECTION WILL BE FILLED AUTOMATICALLY BY JS -->
+          <li><span id='comment-date'>2023/02/14</span> - <span id="comment-user">username</span>
+            <div id="comment-content">Comment 1</div>
+          </li>
+          <li><span id='comment-date'>2023/02/14</span> - <span id="comment-user">username</span>
+            <div id="comment-content">Comment 2</div>
+          </li>
+          <li><span id='comment-date'>2023/02/14</span> - <span id="comment-user">username</span>
+            <div id="comment-content">Comment 3</div>
+          </li>
         </ul>
         <form action="">
           <h2>Add a Comment</h2>
           <input type="text" placeholder='Your Name'>
           <textarea placeholder='Your insights'></textarea>
           <button>Comment</button>
+          <button id='refresh'>Refresh</button>
         </form>
       </div>
     </section>

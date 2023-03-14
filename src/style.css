@@ -96,8 +96,10 @@ footer {
 }
 
 .popup-comments {
+  /* display:none; */
+  display: block;
   z-index: 1;
-  border: 1px solid green;
+  border-radius: 8px;
   background-color: white;
   position: absolute;
   top: 0;
@@ -107,6 +109,7 @@ footer {
   height: 80vh;
   color: black;
   padding: 40px;
+  overflow-y: scroll;
 }
 
 .popup-comments .fa-circle-xmark {
@@ -129,7 +132,6 @@ footer {
 .popup-comments img {
   display: block;
   height: 300px;
-  border: 1px solid red;
 }
 
 .popup-comments p {
@@ -139,17 +141,20 @@ footer {
   text-align: center;
 }
 
+.comments-title {
+  margin-top: 50px;
+}
+
 .comments-wrapper {
   display: flex;
   justify-content: space-between;
   width: 90%;
-  border: 1px solid red;
   margin: 0 auto;
   padding: 20px;
 }
 
 .comment-list {
-  border: 1px solid red;
+  width: 40%;
   padding: 20px;
 }
 
@@ -158,7 +163,41 @@ footer {
   padding: 10px;
 }
 
+#comment-content {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 form {
+  width: 40%;
   display: flex;
   flex-direction: column;
+}
+
+form input {
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 10px;
+  font-family: 'Aqua', sans-serif;
+}
+
+form textarea {
+  margin-top: 15px;
+  height: 80px;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 10px;
+  font-family: 'Aqua', sans-serif;
+}
+
+form button {
+  padding: 15px;
+  width: 40%;
+  margin: auto;
+  margin-top: 15px;
+  font-family: 'Aqua', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
 }

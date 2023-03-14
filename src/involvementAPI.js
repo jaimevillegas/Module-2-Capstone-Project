@@ -6,12 +6,9 @@ const itemID = 'test_item_2'
 const retreiveData = async () => {
   const response = await fetch(`${url}apps/${appID}/comments?item_id=${itemID}`);
   const data = await response.json();
-
   return data;
 };
 
-console.log(retreiveData());
-
-export default {
+export {
   retreiveData
 }
