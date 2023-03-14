@@ -1,5 +1,5 @@
 {
-  "name": "webpacktemplate",
+  "name": "nasaverse",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -10,25 +10,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BahirHakimy/WebPackTemplate.git"
+    "url": "git+https://github.com/jaimevillegas/Module-2-Capstone-Project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BahirHakimy/WebPackTemplate/issues"
+    "url": "https://github.com/jaimevillegas/Module-2-Capstone-Project/issues"
   },
-  "homepage": "https://github.com/BahirHakimy/WebPackTemplate#readme",
+  "homepage": "https://github.com/jaimevillegas/Module-2-Capstone-Project#readme",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.3",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.27.5",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^29.5.0",
     "style-loader": "^3.3.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21"
   }
 }

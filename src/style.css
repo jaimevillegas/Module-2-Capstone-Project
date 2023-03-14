@@ -1,3 +1,96 @@
+@font-face {
+  font-family: 'Aqua';
+  src: url('./assets/fonts/aqua.ttf');
+  font-weight: normal;
+}
+
+:root {
+  --primary: #0a2647;
+  --secondary: #144272;
+  --third: #205295;
+  --fourth: #2c74b3;
+  --light-gray: #e2e2e2;
+}
+
 body {
-  background-color: bisque;
+  font-family: 'Aqua', sans-serif;
+  background-color: var(--primary);
+  color: var(--light-gray);
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-image: url('./assets/images/earth.jpg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+  margin: 40px;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--light-gray);
+  font-size: 1.2rem;
+}
+
+.content-wrapper {
+  margin-top: 150px;
+}
+
+.content-wrapper h2 {
+  text-align: center;
+}
+
+footer {
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+}
+
+.card {
+  border: 1px solid red;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card img {
+  height: 200px;
+}
+
+.card h2 {
+  text-align: center;
+  color: var(--light-gray);
+}
+
+.likes-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
 }
