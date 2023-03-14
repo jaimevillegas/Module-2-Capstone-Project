@@ -3,14 +3,15 @@ import { retreiveData } from './involvementAPI.js';
 const comments = document.querySelector('.comment-list');
 const displayComments = async () => {
   const comment = await retreiveData();
-  const commentObj = comment[0].comment;
-  console.log('Im here bitch');
-  console.log(comment);
-  commentObj.foreach((commentary) => {
-    console.log(commentary);
+  comment.forEach(function(commentItem) {
+    console.log(commentItem.comment);
     const commentContainer = document.createElement('li');
-    commentContainer.innerHTML = `${commentary.comment}`;
+    commentContainer.innerHTML = `
+    <span id='comment-date'>${commentItem.creation_date}</span> - <span id='comment-user'>${commentItem.username}</span>
+      <div id='comment-content'>${commentItem.comment}</div>
+    `
     comments.appendChild(commentContainer);
+
   });
 };
 
