@@ -1,5 +1,5 @@
 {
-  "name": "webpacktemplate",
+  "name": "nasaverse",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BahirHakimy/WebPackTemplate.git"
+    "url": "git+https://github.com/jaimevillegas/Module-2-Capstone-Project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BahirHakimy/WebPackTemplate/issues"
+    "url": "https://github.com/jaimevillegas/Module-2-Capstone-Project/issues"
   },
-  "homepage": "https://github.com/BahirHakimy/WebPackTemplate#readme",
+  "homepage": "https://github.com/jaimevillegas/Module-2-Capstone-Project#readme",
   "devDependencies": {
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
@@ -27,8 +27,5 @@
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21"
   }
 }
