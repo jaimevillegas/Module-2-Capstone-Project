@@ -94,3 +94,71 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+.popup-comments {
+  z-index: 1;
+  border: 1px solid green;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  margin: 5%;
+  height: 80vh;
+  color: black;
+  padding: 40px;
+}
+
+.popup-comments .fa-circle-xmark {
+  font-size: 2rem;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  cursor: pointer;
+}
+
+.popup-comments .fa-circle-xmark:hover {
+  color: red;
+}
+
+#image-title {
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+.popup-comments img {
+  display: block;
+  height: 300px;
+  border: 1px solid red;
+}
+
+.popup-comments p {
+  padding-top: 20px;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+
+.comments-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  border: 1px solid red;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.comment-list {
+  border: 1px solid red;
+  padding: 20px;
+}
+
+.comment-list li {
+  list-style: none;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
