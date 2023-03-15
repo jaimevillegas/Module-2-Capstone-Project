@@ -1,9 +1,14 @@
 import './style.css';
 import './loader.css';
+// import retreiveData from './involvementAPI.js';
+import displayComments from './showComments.js';
 import { $ } from './modules/utils.js';
 import getData from './modules/nasaApi.js';
 import createCard from './modules/createCard.js';
 import cardsCounter from './modules/cardsCounter.js';
+
+const commentsButton = document.getElementById('comments-button');
+const popupCommentsCloseButton = document.getElementById('popup-comments-close-button');
 
 const fetchAndRender = async (options = { title: 'Earth' }, clean = false) => {
   const container = $('#cards');
@@ -48,3 +53,12 @@ const init = async () => {
 window.onload = () => {
   init();
 };
+
+popupCommentsCloseButton.addEventListener('click', () => {
+  document.querySelector('.popup-comments-back').style.display = 'none';
+});
+
+commentsButton.addEventListener('click', () => {
+  document.querySelector('.popup-comments-back').style.display = 'block';
+  displayComments();
+});

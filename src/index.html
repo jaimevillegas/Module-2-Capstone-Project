@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NASAverse</title>
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NASAverse</title>
+</head>
+
+<body>
     <header>
       <nav>
         <h1>NASAverse <span>- Explore the Universe</span></h1>
@@ -49,6 +50,33 @@
           <div class="cell d-3"></div>
           <div class="cell d-4"></div>
         </div>
+      </section>
+      <section class="popup-comments-back">
+        <section class="popup-comments">
+          <img src="#" alt="">
+          <h2 id='image-title'>Awesome Image 1</h2>
+          <i id='popup-comments-close-button' class="fa-regular fa-circle-xmark"></i>
+          <p id='image-description'>Awesome Image Description Lorem ipsum dolor sit amet, qui minim labore adipisicing
+            minim
+            sint cillum sint consectetur cupidatat.</p>
+          <p>Photographer: <span id='photographer'>AWESOME_PHOTOGRAPHER</span></p>
+          <h2 class='comments-title'>Comments <span class='comments-number'></span></h2>
+          <div class="comments-wrapper">
+            <ul class='comment-list'>
+              <!-- THIS SECTION WILL BE FILLED AUTOMATICALLY BY JS -->
+            </ul>
+            <form action="">
+              <h2>Add a Comment</h2>
+              <div class="input-wrapper">
+                <input id='input-username' type="text" placeholder='Your Name'>
+              </div>
+              <div class="input-wrapper">
+                <textarea id='input-description' placeholder='Your insights'></textarea>
+              </div>
+              <button id='publish-comment-button'>Comment</button>
+            </form>
+          </div>
+        </section>
       </section>
     </main>
     <footer>
