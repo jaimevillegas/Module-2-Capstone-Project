@@ -25,7 +25,23 @@ const submitComment = async (username, commentDescription) => {
   return data;
 };
 
+const getLikes = async () => {
+  // It returns an array of objects with all item ID's. We have to implement a filtering function
+  const response = await fetch(`${url}apps/${appID}/likes`);
+  const data = await response.json();
+  return data;
+};
+
+const filterLikes = (itemID) => {
+  const likesObj = getLikes();
+  // FILTER THE ARRAY OF OBJECTS
+  // likesObj.filter()
+};
+
+// FUNCTION TO ADD A LIKE
+
 export {
   retreiveData,
   submitComment,
+  getLikes,
 };
