@@ -6,10 +6,10 @@ const commentsButton = document.getElementById('comments-button');
 const popupCommentsCloseButton = document.getElementById('popup-comments-close-button');
 
 popupCommentsCloseButton.addEventListener('click', () => {
-  document.querySelector('.popup-comments').style.display = 'none';
+  document.querySelector('.popup-comments-back').style.display = 'none';
 });
 
 commentsButton.addEventListener('click', () => {
-  document.querySelector('.popup-comments').style.display = 'block';
+  document.querySelector('.popup-comments-back').style.display = 'block';
   displayComments();
 });

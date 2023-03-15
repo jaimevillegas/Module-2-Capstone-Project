@@ -4,6 +4,20 @@
   font-weight: normal;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 100px;
+}
+
 :root {
   --primary: #0a2647;
   --secondary: #144272;
@@ -53,6 +67,36 @@ header a {
   text-align: center;
 }
 
+#publish-comment-button {
+  margin-top: 20px;
+  padding: 1.3em 3em;
+  width: min-content;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+#publish-comment-button:hover {
+  background-color: var(--fourth);
+  box-shadow: 0 15px 20px var(--secondary);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+#publish-comment-button:active {
+  transform: translateY(-1px);
+}
+
 footer {
   padding: 20px;
   position: fixed;
@@ -68,7 +112,6 @@ footer {
 }
 
 .card {
-  border: 1px solid red;
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -95,20 +138,34 @@ footer {
   justify-content: space-between;
 }
 
-.popup-comments {
+.popup-comments-back {
   display: none;
+  position: fixed;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background-color: #3d4b5f7c;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
   z-index: 1;
+}
+
+.popup-comments {
+  box-shadow: 4px 4px 8px black;
+  background-color: var(--primary);
+  color: var(--light-gray);
+  display: block;
+  z-index: 2;
   border-radius: 8px;
-  background-color: white;
   position: absolute;
   top: 0;
   left: 0;
   width: 80%;
   margin: 5%;
-  height: 80vh;
-  color: black;
+  height: 75vh;
   padding: 40px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .popup-comments .fa-circle-xmark {
@@ -117,15 +174,17 @@ footer {
   right: 5%;
   top: 5%;
   cursor: pointer;
+  color: var(--light-gray);
 }
 
 .popup-comments .fa-circle-xmark:hover {
-  color: red;
+  color: var(--fourth);
 }
 
 #image-title {
   margin-top: 20px;
   font-size: 2rem;
+  color: var(--light-gray);
 }
 
 .popup-comments img {
@@ -134,6 +193,7 @@ footer {
 }
 
 .popup-comments p {
+  color: var(--light-gray);
   padding-top: 20px;
   margin: 0 auto;
   width: 80%;
@@ -141,10 +201,12 @@ footer {
 }
 
 .comments-title {
+  color: var(--light-gray);
   margin-top: 50px;
 }
 
 .comments-wrapper {
+  color: var(--light-gray);
   display: flex;
   justify-content: space-between;
   width: 90%;
@@ -199,4 +261,37 @@ form button {
   font-family: 'Aqua', sans-serif;
   font-size: 1rem;
   font-weight: bold;
+}
+
+.input-wrapper input {
+  background-color: #eee;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 1rem;
+  color: lightcoral;
+  box-shadow: 0 0.4rem #dfd9d9;
+  cursor: pointer;
+}
+
+.input-wrapper textarea {
+  background-color: #eee;
+  margin-top: 28px;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 1rem;
+  color: lightcoral;
+  box-shadow: 0 0.4rem #dfd9d9;
+  cursor: pointer;
+}
+
+.input-wrapper input:focus {
+  outline-color: var(--fourth);
+}
+
+.input-wrapper textarea:focus {
+  outline-color: var(--fourth);
 }
