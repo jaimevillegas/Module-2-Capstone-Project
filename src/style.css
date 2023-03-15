@@ -181,6 +181,7 @@ footer {
   from {
     background-color: var(--placeholder);
   }
+
   to {
     background-color: var(--dark);
   }

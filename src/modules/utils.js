@@ -19,7 +19,7 @@ const showToast = (
   msg,
   callback,
   buttonText = 'OK',
-  anchor = $('#toastContainer')
+  anchor = $('#toastContainer'),
 ) => {
   const toast = createElement('li', {
     class:
@@ -52,7 +52,8 @@ const showToast = (
   };
 };
 
-const trauncateText = (text = '', length = 155) =>
-  text.slice(0, length).trim() + '....';
+const trauncateText = (text = '', length = 155) => `${text.slice(0, length).trim()}....`;
 
-export { createElement, $, showToast, trauncateText };
+export {
+  createElement, $, showToast, trauncateText,
+};

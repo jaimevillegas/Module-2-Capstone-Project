@@ -5,6 +5,7 @@ const getImages = async (url) => {
   if (response.ok) {
     return response.json();
   }
+  return `Error: Request failed with status code ${response.status}`;
 };
 
 const filterData = async (items = []) => {
@@ -16,13 +17,11 @@ const filterData = async (items = []) => {
       const imageUrls = await getImages(href);
       imageUrls.forEach((url) => {
         if (url.match(/thumb/)) {
-          images['thumb'] = url;
-        } else {
-          if (url.match(/orig/)) {
-            images['main'] = url;
-          } else if (url.match(/medium/)) {
-            images['main'] = url;
-          }
+          images.thumb = url;
+        } else if (url.match(/orig/)) {
+          images.main = url;
+        } else if (url.match(/medium/)) {
+          images.main = url;
         }
       });
       filtered.push({
@@ -33,7 +32,7 @@ const filterData = async (items = []) => {
         thumb: images.thumb,
         image: images.main,
       });
-    })
+    }),
   );
 
   return filtered;
@@ -58,4 +57,4 @@ const getData = async (params, configs) => {
   }
 };
 
-export { getData };
+export default getData;
