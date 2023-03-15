@@ -11,7 +11,7 @@ const displayComments = async () => {
   comments.innerHTML = '';
   commentsNumber.innerHTML = '';
   commentsNumber.innerHTML = `(${comment.length})`;
-  comment.forEach(function(commentItem) {
+  comment.forEach((commentItem) => {
     const commentContainer = document.createElement('li');
     commentContainer.innerHTML = `
     <span id='comment-date'>${commentItem.creation_date}</span> - <span id='comment-user'>${commentItem.username}</span>

@@ -4,7 +4,9 @@ const itemID = 'test_item_2';
 
 // Retrieve data from the API
 const retreiveData = async () => {
-  const response = await fetch(`${url}apps/${appID}/comments?item_id=${itemID}`);
+  const response = await fetch(
+    `${url}apps/${appID}/comments?item_id=${itemID}`,
+  );
   const data = await response.json();
   return data;
 };
@@ -16,9 +18,9 @@ const submitComment = async (username, commentDescription) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      'item_id': itemID,
-      'username': username,
-      'comment': commentDescription,
+      item_id: itemID,
+      username,
+      comment: commentDescription,
     }),
   });
   const data = await response.json();
@@ -32,8 +34,8 @@ const getLikes = async () => {
   return data;
 };
 
-const filterLikes = (itemID) => {
-  const likesObj = getLikes();
+const filterLikes = () => {
+  // const likesObj = getLikes();
   // FILTER THE ARRAY OF OBJECTS
   // likesObj.filter()
 };
@@ -41,7 +43,5 @@ const filterLikes = (itemID) => {
 // FUNCTION TO ADD A LIKE
 
 export {
-  retreiveData,
-  submitComment,
-  getLikes,
+  retreiveData, submitComment, getLikes, filterLikes,
 };
