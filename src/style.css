@@ -96,8 +96,7 @@ footer {
 }
 
 .popup-comments {
-  /* display:none; */
-  display: block;
+  display: none;
   z-index: 1;
   border-radius: 8px;
   background-color: white;
