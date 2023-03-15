@@ -32,7 +32,7 @@ const filterData = async (items = []) => {
         thumb: images.thumb,
         image: images.main,
       });
-    }),
+    })
   );
 
   return filtered;
@@ -40,7 +40,7 @@ const filterData = async (items = []) => {
 
 const getData = async (params, configs) => {
   const query = endpoints.search({
-    title: 'black hole',
+    title: 'mars',
     media_type: 'image',
     page_size: 20,
     ...params,
