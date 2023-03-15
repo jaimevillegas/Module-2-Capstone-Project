@@ -26,11 +26,11 @@ export default function createCard(item) {
   const interactions = createElement('div', { class: 'interactions' });
   const like = createElement('div', {
     class: 'icon',
-    innerHTML: `<i class="fa-regular fa-heart"></i>240`,
+    innerHTML: '<i class="fa-regular fa-heart"></i>240',
   });
   const comment = createElement('div', {
     class: 'icon',
-    innerHTML: `<i class="fa-regular fa-comment"></i>32`,
+    innerHTML: '<i class="fa-regular fa-comment"></i>32',
   });
   interactions.append(like, comment);
   info.append(title, description, interactions);

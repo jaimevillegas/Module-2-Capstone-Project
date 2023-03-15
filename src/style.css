@@ -5,17 +5,19 @@
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #e4e4e4;
-  border-radius: 100px;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--secondary);
-  border-radius: 100px;
+  background-color: #205295;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -32,6 +34,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  position: relative;
 }
 
 body {
@@ -42,6 +45,8 @@ body {
   background-image: url('./assets/images/earth.jpg');
   background-size: 100% auto;
   background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
 }
 
 header {
@@ -49,6 +54,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10;
+  backdrop-filter: blur(0.2rem);
 }
 
 header ul {
@@ -69,6 +76,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   margin: 0.5rem 1rem;
+  z-index: 100;
 }
 
 h1 span {
@@ -82,6 +90,7 @@ h1 span {
   transition: all 0.5s;
   padding: 0.5rem 1rem;
   border: none;
+  cursor: pointer;
 }
 
 .menu-items:hover {
@@ -105,6 +114,20 @@ h1 span {
 
 .menu-items:hover::before {
   width: 250%;
+}
+
+.active {
+  display: inline-block;
+  color: var(--fourth);
+  font-size: 0.8rem;
+  font-weight: bold;
+  transform: translateY(-0.5rem) translateX(-0.5rem);
+}
+
+.content-wrapper {
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 5rem;
 }
 
 #publish-comment-button {
@@ -137,20 +160,13 @@ h1 span {
   transform: translateY(-1px);
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  text-align: center;
-  padding: 1rem;
-  width: 100%;
-}
-
 #cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
   margin: 1rem;
+  margin-bottom: 10rem;
 }
 
 .card {
@@ -165,6 +181,8 @@ footer {
   overflow: hidden;
   background-color: var(--placeholder);
   backdrop-filter: blur(0.1rem);
+  opacity: 0;
+  animation: fade-in 0.3s linear 1 forwards;
 }
 
 .card img {
@@ -219,6 +237,15 @@ footer {
 .buttons-container {
   display: flex;
   justify-content: space-between;
+}
+
+#load-more {
+  background-color: transparent;
+  z-index: 10;
+  font-size: 1rem;
+  color: var(--light-gray);
+  margin: 5rem auto;
+  display: none;
 }
 
 .popup-comments-back {
@@ -379,11 +406,27 @@ form button {
   outline-color: var(--fourth);
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  backdrop-filter: blur(0.3rem);
+}
+
 @keyframes pulse {
   from {
     background-color: var(--placeholder);
   }
+
   to {
     background-color: var(--dark);
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
   }
 }
