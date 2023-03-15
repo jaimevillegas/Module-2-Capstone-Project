@@ -15,7 +15,6 @@ const $ = (query) => {
   return result.length > 1 ? result : result[0];
 };
 
-const trauncateText = (text = '', length = 155) =>
-  `${text.slice(0, length).trim()}....`;
+const trauncateText = (text = '', length = 155) => `${text.slice(0, length).trim()}....`;
 
 export { createElement, $, trauncateText };

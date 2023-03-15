@@ -32,7 +32,7 @@ const filterData = async (items = []) => {
         thumb: images.thumb,
         image: images.main,
       });
-    })
+    }),
   );
 
   return filtered;

@@ -20,10 +20,10 @@ const fetchAndRender = async (options = { title: 'Earth' }, clean = false) => {
 const loadMore = async () => {
   const currentTitle = $('.active').parentElement.text.split(' ')[0];
   const currentCarsCount = cardsCounter();
-  const page_size = 20;
-  const page = Math.floor(currentCarsCount / page_size) + 1;
+  const pageSize = 20;
+  const page = Math.floor(currentCarsCount / pageSize) + 1;
   $('#load-more').style.display = 'none';
-  await fetchAndRender({ title: currentTitle, page_size, page });
+  await fetchAndRender({ title: currentTitle, page_size: pageSize, page });
 };
 
 const init = async () => {
