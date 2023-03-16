@@ -1,12 +1,11 @@
-const url =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
 const appID = 'lYZ9ZtHh76XKuPy6HAWO';
 const itemID = 'test_item_2';
 
 // Retrieve data from the API
 const retreiveData = async () => {
   const response = await fetch(
-    `${url}apps/${appID}/comments?item_id=${itemID}`
+    `${url}apps/${appID}/comments?item_id=${itemID}`,
   );
   const data = await response.json();
   return data;
@@ -37,13 +36,11 @@ const addLike = async (itemID) => {
     });
     if (response.ok) {
       return { success: true };
-    } else {
-      console.log(`Request failed with status code: ${response.status}`);
     }
+    return { success: false };
   } catch (error) {
     throw new Error('Connection Error: Please check your connection');
   }
-  return { success: false };
 };
 
 const getLikes = async (itemID) => {
@@ -55,4 +52,6 @@ const getLikes = async (itemID) => {
 
 // FUNCTION TO ADD A LIKE
 
-export { retreiveData, submitComment, getLikes, addLike };
+export {
+  retreiveData, submitComment, getLikes, addLike,
+};

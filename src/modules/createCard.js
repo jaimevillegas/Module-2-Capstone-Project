@@ -35,7 +35,6 @@ export default function createCard(item, index, data) {
         const result = await addLike(item.nasa_id);
         if (result.success) {
           data[index] = { ...item, likes: data[index].likes + 1 };
-          console.log(data[index].likes);
           updateCard(index, data[index].likes);
         }
         like.removeAttribute('disabled');

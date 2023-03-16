@@ -5,12 +5,12 @@ import { $ } from './modules/utils.js';
 import getData from './modules/nasaApi.js';
 import createCard from './modules/createCard.js';
 import cardsCounter from './modules/cardsCounter.js';
-import { getLikes } from './involvementAPI';
-import combineData from './modules/combineData';
+import { getLikes } from './involvementAPI.js';
+import combineData from './modules/combineData.js';
 
 const commentsButton = document.getElementById('comments-button');
 const popupCommentsCloseButton = document.getElementById(
-  'popup-comments-close-button'
+  'popup-comments-close-button',
 );
 
 const fetch = async (options = { title: 'Earth' }, clean = false) => {
