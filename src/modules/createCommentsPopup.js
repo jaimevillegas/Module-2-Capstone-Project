@@ -1,5 +1,5 @@
 import { retreiveData, submitComment } from '../involvementAPI.js';
-import { createElement, trauncateText } from './utils.js';
+import { createElement } from './utils.js';
 
 export default function createCommentPopup(item) {
   const popupCommentsBack = createElement('section', { class: `popup-comments-back popup-comments-back-${item.nasa_id}` });
@@ -26,7 +26,6 @@ export default function createCommentPopup(item) {
   const textPhotographer = createElement('p', {
     innerHTML: `Photographer: ${item.photographer}`,
   });
-
 
   const commentsWrapper = createElement('div', { class: 'comments-wrapper' });
   const commentList = createElement('ul', { class: 'comment-list' });
@@ -85,7 +84,7 @@ export default function createCommentPopup(item) {
 
     const getComments = await retreiveData(item.nasa_id);
     commentList.innerHTML = '';
-    getComments.forEach(function(commentary) {
+    getComments.forEach((commentary) => {
       const commentItem = createElement('li', {
         innerHTML: `
       <span id='comment-date-${item.nasa_id}'>${commentary.creation_date}</span> - 
@@ -96,13 +95,13 @@ export default function createCommentPopup(item) {
       commentList.append(commentItem);
     });
 
-    return getComments, commentsTitle;
+    return getComments;
   };
 
   displayComments();
 
   document.addEventListener('click', (e) => {
-    const target = e.target.closest(`#popup-comments-close-button`);
+    const target = e.target.closest('#popup-comments-close-button');
 
     if (target) {
       popupCommentsBack.style.display = 'none';
@@ -110,7 +109,7 @@ export default function createCommentPopup(item) {
   });
 
   document.addEventListener('click', async (e) => {
-    const target = e.target.closest(`#publish-comment-button`);
+    const target = e.target.closest('#publish-comment-button');
 
     if (target) {
       e.preventDefault();
