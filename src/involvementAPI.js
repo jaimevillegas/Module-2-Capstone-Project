@@ -25,21 +25,31 @@ const submitComment = async (itemID, username, commentDescription) => {
   return data;
 };
 
-const getLikes = async () => {
+const addLike = async (itemID) => {
+  try {
+    const response = await fetch(`${url}apps/${appID}/likes`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ item_id: itemID }),
+    });
+    if (response.ok) {
+      return { success: true };
+    }
+    return { success: false };
+  } catch (error) {
+    throw new Error('Connection Error: Please check your connection');
+  }
+};
+
+const getLikes = async (itemID) => {
   // It returns an array of objects with all item ID's. We have to implement a filtering function
   const response = await fetch(`${url}apps/${appID}/likes`);
   const data = await response.json();
-  return data;
+  return itemID ? data.find((like) => like.item_id === itemID) : data;
 };
-
-// const filterLikes = (itemID) => {
-//   const likesObj = getLikes();
-// FILTER THE ARRAY OF OBJECTS
-// likesObj.filter()
-// };
 
 // FUNCTION TO ADD A LIKE
 
 export {
-  retreiveData, submitComment, getLikes, filterLikes,
+  retreiveData, submitComment, getLikes, addLike,
 };
