@@ -42,7 +42,7 @@ export default function createCommentPopup(item) {
   });
   const commentsTitle = createElement('h2', {
     class: 'comments-title',
-    innerHTML: ``,
+    innerHTML: '',
   });
   const publishCommentButton = createElement('button', {
     id: 'publish-comment-button',
@@ -70,19 +70,18 @@ export default function createCommentPopup(item) {
     if (commentCounter.length === undefined) {
       const numberOfComments = createElement('span', {
         class: 'comments-title',
-        innerHTML: `Comments 0`,
+        innerHTML: 'Comments 0',
       });
+      commentsTitle.innerHTML = '';
       commentsTitle.append(numberOfComments);
-
     } else {
-
       const numberOfComments = createElement('span', {
         class: 'comments-title',
         innerHTML: `Comments ${commentCounter.length}`,
       });
+      commentsTitle.innerHTML = '';
       commentsTitle.append(numberOfComments);
     }
-
 
     const getComments = await retreiveData(item.nasa_id);
     commentList.innerHTML = '';
@@ -97,13 +96,10 @@ export default function createCommentPopup(item) {
       commentList.append(commentItem);
     });
 
-
     return getComments, commentsTitle;
   };
 
   displayComments();
-
-
 
   document.addEventListener('click', (e) => {
     const target = e.target.closest(`#popup-comments-close-button`);
@@ -125,10 +121,10 @@ export default function createCommentPopup(item) {
       inputDescription.value = '';
       setTimeout(() => {
         displayComments();
-      }, "1000");
+      }, '1000');
       await submitComment(nasaID, newUser, newDescription);
     }
-  })
+  });
 
   return popupCommentsBack;
 }
