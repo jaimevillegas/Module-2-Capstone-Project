@@ -1,7 +1,8 @@
-import { createElement, trauncateText } from './utils.js';
+import { $, createElement, trauncateText } from './utils.js';
 import { addLike, retreiveData } from '../involvementAPI.js';
 import updateCard from './updateCard.js';
 import createCommentPopup from './createCommentsPopup.js';
+import commentCounterFunction from './commentsCounter.js';
 
 const contentWrapper = document.querySelector('.content-wrapper');
 

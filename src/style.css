@@ -306,7 +306,7 @@ h1 span {
   margin-top: 20px;
   text-align: center;
   font-size: 2rem;
-  color: var(--light-gray);
+  color: var(--fourth);
 }
 
 .popup-comments img {
@@ -328,17 +328,24 @@ h1 span {
 }
 
 .comments-title {
-  color: var(--light-gray);
+  color: var(--fourth);
+  text-align: center;
   margin-top: 50px;
+  margin-bottom: 3rem;
+  font-size: 2rem;
 }
 
 .comments-wrapper {
-  color: var(--light-gray);
+  color: var(--fourth);
   display: flex;
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
   padding: 20px;
+}
+
+.comments-wrapper h2 {
+  margin-bottom: 1rem;
 }
 
 .comment-list {
