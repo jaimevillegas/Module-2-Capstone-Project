@@ -1,6 +1,8 @@
 import { createElement, trauncateText } from './utils.js';
+import { addLike } from '../involvementAPI.js';
+import updateCard from './updateCard.js';
 
-export default function createCard(item) {
+export default function createCard(item, index, data) {
   const card = createElement('div', { class: 'card pulse' });
   const image = createElement('img', {
     src: item.image,
@@ -26,11 +28,23 @@ export default function createCard(item) {
   const interactions = createElement('div', { class: 'interactions' });
   const like = createElement('div', {
     class: 'icon',
-    innerHTML: '<i class="fa-regular fa-heart"></i>240',
+    innerHTML: `<i class="fa-regular fa-heart"></i> ${item.likes}`,
+    onclick: async () => {
+      if (!like.getAttribute('disabled')) {
+        like.setAttribute('disabled', true);
+        const result = await addLike(item.nasa_id);
+        if (result.success) {
+          data[index] = { ...item, likes: data[index].likes + 1 };
+          console.log(data[index].likes);
+          updateCard(index, data[index].likes);
+        }
+        like.removeAttribute('disabled');
+      }
+    },
   });
   const comment = createElement('div', {
     class: 'icon',
-    innerHTML: '<i class="fa-regular fa-comment"></i>32',
+    innerHTML: '<i class="fa-regular fa-comment"></i> 32',
   });
   interactions.append(like, comment);
   info.append(title, description, interactions);

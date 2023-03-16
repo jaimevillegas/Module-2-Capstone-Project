@@ -1,21 +1,31 @@
 import './style.css';
 import './loader.css';
-// import retreiveData from './involvementAPI.js';
 import displayComments from './showComments.js';
 import { $ } from './modules/utils.js';
 import getData from './modules/nasaApi.js';
 import createCard from './modules/createCard.js';
 import cardsCounter from './modules/cardsCounter.js';
+import { getLikes } from './involvementAPI';
+import combineData from './modules/combineData';
 
 const commentsButton = document.getElementById('comments-button');
-const popupCommentsCloseButton = document.getElementById('popup-comments-close-button');
+const popupCommentsCloseButton = document.getElementById(
+  'popup-comments-close-button'
+);
 
-const fetchAndRender = async (options = { title: 'Earth' }, clean = false) => {
-  const container = $('#cards');
+const fetch = async (options = { title: 'Earth' }, clean = false) => {
   $('#loader-container').style.display = 'flex';
-  if (clean) container.innerHTML = '';
+  if (clean) $('#cards').innerHTML = '';
   const data = await getData(options);
-  const cards = data.map((item) => createCard(item));
+  const likes = await getLikes();
+  const combined = combineData(data, likes);
+  return combined;
+};
+
+const render = (data, clean) => {
+  const container = $('#cards');
+  if (clean) container.innerHTML = '';
+  const cards = data.map((item, index) => createCard(item, index, data));
   $('#loader-container').style.display = 'none';
   $('#load-more').style.display = 'block';
   container.append(...cards);
@@ -28,29 +38,36 @@ const loadMore = async () => {
   const pageSize = 20;
   const page = Math.floor(currentCarsCount / pageSize) + 1;
   $('#load-more').style.display = 'none';
-  await fetchAndRender({ title: currentTitle, page_size: pageSize, page });
+  const newData = await fetch({
+    title: currentTitle,
+    page_size: pageSize,
+    page,
+  });
+  render(newData);
 };
 
 const init = async () => {
   const links = $('.nav-link');
   links.forEach((link) => {
-    link.addEventListener('click', (ev) => {
+    link.addEventListener('click', async (ev) => {
       ev.preventDefault();
+      $('#load-more').style.display = 'none';
       const title = ev.target.textContent;
-      fetchAndRender({ title }, true);
+      const data = await fetch({ title }, true);
+      render(data);
       $('.active').innerHTML = '';
       $('.active').classList.remove('active');
-      $('#load-more').style.display = 'none';
       link.firstElementChild.classList.add('active');
     });
   });
   $('#load-more').addEventListener('click', () => {
     loadMore();
   });
-  fetchAndRender();
+  const data = await fetch();
+  render(data);
 };
 
-window.onload = () => {
+window.onload = async () => {
   init();
 };
 
