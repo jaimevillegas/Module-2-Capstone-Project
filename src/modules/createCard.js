@@ -48,7 +48,6 @@ export default function createCard(item) {
     if (target) {
       console.log(`Clicked! button with id ${item.nasa_id}`);
       contentWrapper.append(createCommentPopup(item));
-      // document.querySelector(`.popup-comments-back-${item.nasa_id}`).style.display = 'block';
     }
   });
 

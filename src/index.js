@@ -12,17 +12,11 @@ const init = async () => {
   const container = $('#cards');
   const data = await getData();
   const cards = data.map((item) => createCard(item));
-  console.log(container);
-  // console.log(createCard);
   container.append(...cards);
 };
 
 window.onload = async () => {
   await init();
 };
-
-popupCommentsCloseButton.addEventListener('click', () => {
-  document.querySelector('.popup-comments-back').style.display = 'none';
-});
 
 

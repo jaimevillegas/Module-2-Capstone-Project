@@ -1,9 +1,8 @@
+import { submitComment } from '../involvementAPI.js';
 import { createElement, trauncateText } from './utils.js';
 
 export default function createCommentPopup(item) {
-  console.log("EN CREATE COMMENT!");
-  console.log(item);
-  const popupCommentsBack = createElement('section', { class: `popup-comments-back-${item.nasa_id}` });
+  const popupCommentsBack = createElement('section', { class: `popup-comments-back popup-comments-back-${item.nasa_id}` });
   const popupComments = createElement('section', { class: 'popup-comments' });
   const image = createElement('img', {
     src: item.image,
@@ -12,7 +11,7 @@ export default function createCommentPopup(item) {
   const imageTitle = createElement('h2', {
     id: 'image-title',
     textContent:
-      item.title.trim().length > 20 ? trauncateText(item.title, 22) : item.title,
+      item.title,
     title: item.title,
   });
   const closeButton = createElement('i', {
@@ -22,7 +21,8 @@ export default function createCommentPopup(item) {
   const imageDescription = createElement('p', {
     id: 'image-description',
     textContent:
-      item.description.length > 155 ? trauncateText(item.description) : item.description,
+      item.description,
+    // item.description.length > 155 ? trauncateText(item.description) : item.description,
   });
   const textPhotographer = createElement('p', {
     innerHTML: `Photographer: ${item.photographer}`,
@@ -38,7 +38,7 @@ export default function createCommentPopup(item) {
   const form = createElement('form');
   const addAComment = createElement('h2', { textContent: 'Add a Comment' });
   const inputWrapper = createElement('div', { class: 'input-wrapper' });
-  const inputUsername = createElement('div', {
+  const inputUsername = createElement('input', {
     class: 'input-username',
     // PUT AN ID
     placeholder: 'Your Name',
@@ -68,5 +68,31 @@ export default function createCommentPopup(item) {
   );
   popupCommentsBack.append(popupComments);
   popupCommentsBack.style.display = 'block';
+
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest(`#popup-comments-close-button`);
+
+    if (target) {
+      console.log("Boton cerrar presionado");
+      popupCommentsBack.style.display = 'none';
+      // contentWrapper.innerHTML = '';
+    }
+  });
+
+  document.addEventListener('click', async (e) => {
+    const target = e.target.closest(`#publish-comment-button`);
+
+    if (target) {
+      e.preventDefault();
+      console.log("Boton comment presionado");
+      const nasaID = item.nasa_id;
+      const newUser = inputUsername.value;
+      const newDescription = inputDescription.value;
+      await submitComment(nasaID, newUser, newDescription);
+      inputUsername.value = '';
+      inputDescription.value = '';
+    }
+  })
+
   return popupCommentsBack;
 }
