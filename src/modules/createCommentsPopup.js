@@ -73,12 +73,14 @@ export default function createCommentPopup(item) {
         class: 'comments-title',
         innerHTML: 'Comments 0',
       });
+      commentsTitle.innerHTML = '';
       commentsTitle.append(numberOfComments);
     } else {
       const numberOfComments = createElement('span', {
         class: 'comments-title',
         innerHTML: `Comments ${commentCounter.length}`,
       });
+      commentsTitle.innerHTML = '';
       commentsTitle.append(numberOfComments);
     }
 
@@ -95,7 +97,7 @@ export default function createCommentPopup(item) {
       commentList.append(commentItem);
     });
 
-    return { getComments, commentsTitle };
+    return getComments;
   };
 
   displayComments();

@@ -26,7 +26,7 @@ html {
   --third: #205295;
   --fourth: #2c74b3;
   --light-gray: #e2e2e2;
-  --dark: #0a264744;
+  --dark: #000000a8;
   --placeholder: #00000080;
 }
 
@@ -75,7 +75,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5rem 1rem;
+  margin: 0.5rem 2rem;
   z-index: 100;
 }
 
@@ -164,7 +164,7 @@ h1 span {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   margin: 1rem;
   margin-bottom: 10rem;
 }
@@ -183,6 +183,8 @@ h1 span {
   backdrop-filter: blur(0.1rem);
   opacity: 0;
   animation: fade-in 0.3s linear 1 forwards;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px black;
 }
 
 .card img {
@@ -203,10 +205,20 @@ h1 span {
   padding: 1rem;
   gap: 1rem;
   cursor: default;
+  font-size: 0.9rem;
+  line-height: 1rem;
 }
 
 .card-description:hover {
   backdrop-filter: blur(5px);
+}
+
+.fa-comment:hover {
+  color: var(--third);
+}
+
+.fa-heart:hover {
+  color: red;
 }
 
 .pulse {
@@ -258,7 +270,7 @@ h1 span {
   width: 100%;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 100000;
 }
 
 .popup-comments {
@@ -266,7 +278,7 @@ h1 span {
   background-color: var(--primary);
   color: var(--light-gray);
   display: block;
-  z-index: 2;
+  z-index: 200000;
   border-radius: 8px;
   position: absolute;
   top: 5%;
@@ -417,7 +429,9 @@ footer {
   text-align: center;
   padding: 1rem;
   width: 100%;
+  background-color: var(--dark);
   backdrop-filter: blur(0.3rem);
+  margin-top: 2rem;
 }
 
 @keyframes pulse {

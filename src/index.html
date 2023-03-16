@@ -8,83 +8,81 @@
 </head>
 
 <body>
-    <header>
-      <nav>
-        <h1>NASAverse <span>- Explore the Universe</span></h1>
-        <ul>
-          <li class="menu-items">
-            <a class="nav-link">Earth <span class="active"></span></a>
-          </li>
-          <li class="menu-items">
-            <a class="nav-link">Moon <span></span></a>
-          </li>
-          <li class="menu-items">
-            <a class="nav-link">Mars <span></span></a>
-          </li>
-          <li class="menu-items">
-            <a class="nav-link">Hubble <span></span></a>
-          </li>
-          <li class="menu-items">
-            <a class="nav-link">ISS <span></span></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main class="content-wrapper">
-      <section id="cards">
-        <!-- DYNAMIC CONTENT -->
-      </section>
-      <button id="load-more" class="menu-items">Load more</button>
-      <section id="loader-container">
-        <div class="loader">
-          <div class="cell d-0"></div>
-          <div class="cell d-1"></div>
-          <div class="cell d-2"></div>
+  <header>
+    <nav>
+      <h1>NASAverse <span>- Explore the Universe</span></h1>
+      <ul>
+        <li class="menu-items">
+          <a class="nav-link">Earth <span class="active"></span></a>
+        </li>
+        <li class="menu-items">
+          <a class="nav-link">Moon <span></span></a>
+        </li>
+        <li class="menu-items">
+          <a class="nav-link">Mars <span></span></a>
+        </li>
+        <li class="menu-items">
+          <a class="nav-link">Hubble <span></span></a>
+        </li>
+        <li class="menu-items">
+          <a class="nav-link">ISS <span></span></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="content-wrapper">
+    <section id="cards">
+      <!-- DYNAMIC CONTENT -->
+    </section>
+    <button id="load-more" class="menu-items">Load more</button>
+    <section id="loader-container">
+      <div class="loader">
+        <div class="cell d-0"></div>
+        <div class="cell d-1"></div>
+        <div class="cell d-2"></div>
 
-          <div class="cell d-1"></div>
-          <div class="cell d-2"></div>
+        <div class="cell d-1"></div>
+        <div class="cell d-2"></div>
 
-          <div class="cell d-2"></div>
-          <div class="cell d-3"></div>
+        <div class="cell d-2"></div>
+        <div class="cell d-3"></div>
 
-          <div class="cell d-3"></div>
-          <div class="cell d-4"></div>
+        <div class="cell d-3"></div>
+        <div class="cell d-4"></div>
+      </div>
+    </section>
+    <section class="popup-comments-back">
+      <section class="popup-comments">
+        <img src="#" alt="">
+        <h2 id='image-title'>Awesome Image 1</h2>
+        <i id='popup-comments-close-button' class="fa-regular fa-circle-xmark"></i>
+        <p id='image-description'>Awesome Image Description Lorem ipsum dolor sit amet, qui minim labore adipisicing
+          minim
+          sint cillum sint consectetur cupidatat.</p>
+        <p>Photographer: <span id='photographer'>AWESOME_PHOTOGRAPHER</span></p>
+        <h2 class='comments-title'>Comments <span class='comments-number'></span></h2>
+        <div class="comments-wrapper">
+          <ul class='comment-list'>
+            <!-- THIS SECTION WILL BE FILLED AUTOMATICALLY BY JS -->
+          </ul>
+          <form action="">
+            <h2>Add a Comment</h2>
+            <div class="input-wrapper">
+              <input id='input-username' type="text" placeholder='Your Name'>
+            </div>
+            <div class="input-wrapper">
+              <textarea id='input-description' placeholder='Your insights'></textarea>
+            </div>
+            <button id='publish-comment-button'>Comment</button>
+          </form>
         </div>
       </section>
-      <section class="popup-comments-back">
-        <section class="popup-comments">
-          <img src="#" alt="">
-          <h2 id='image-title'>Awesome Image 1</h2>
-          <i id='popup-comments-close-button' class="fa-regular fa-circle-xmark"></i>
-          <p id='image-description'>Awesome Image Description Lorem ipsum dolor sit amet, qui minim labore adipisicing
-            minim
-            sint cillum sint consectetur cupidatat.</p>
-          <p>Photographer: <span id='photographer'>AWESOME_PHOTOGRAPHER</span></p>
-          <h2 class='comments-title'>Comments <span class='comments-number'></span></h2>
-          <div class="comments-wrapper">
-            <ul class='comment-list'>
-              <!-- THIS SECTION WILL BE FILLED AUTOMATICALLY BY JS -->
-            </ul>
-            <form action="">
-              <h2>Add a Comment</h2>
-              <div class="input-wrapper">
-                <input id='input-username' type="text" placeholder='Your Name'>
-              </div>
-              <div class="input-wrapper">
-                <textarea id='input-description' placeholder='Your insights'></textarea>
-              </div>
-              <button id='publish-comment-button'>Comment</button>
-            </form>
-          </div>
-        </section>
-      </section>
-    </main>
-    <footer>
-      <p>Created by Bahir Hakimi and Jaime Villegas - &copy;MIT License</p>
-    </footer>
-    <script
-      src="https://kit.fontawesome.com/cbbd43a9dc.js"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    </section>
+  </main>
+  <footer>
+    <p>Created by Bahir Hakimi and Jaime Villegas - &copy;MIT License</p>
+  </footer>
+  <script src="https://kit.fontawesome.com/cbbd43a9dc.js" crossorigin="anonymous"></script>
+</body>
+
 </html>
