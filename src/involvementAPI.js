@@ -3,7 +3,7 @@ const appID = 'lYZ9ZtHh76XKuPy6HAWO';
 // const itemID = 'test_item_2';
 
 // Retrieve data from the API
-const retreiveData = async () => {
+const retreiveData = async (itemID) => {
   const response = await fetch(`${url}apps/${appID}/comments?item_id=${itemID}`);
   const data = await response.json();
   return data;

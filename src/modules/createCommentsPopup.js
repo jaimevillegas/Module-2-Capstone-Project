@@ -1,4 +1,4 @@
-import { submitComment } from '../involvementAPI.js';
+import { retreiveData, submitComment } from '../involvementAPI.js';
 import { createElement, trauncateText } from './utils.js';
 
 export default function createCommentPopup(item) {
@@ -22,31 +22,27 @@ export default function createCommentPopup(item) {
     id: 'image-description',
     textContent:
       item.description,
-    // item.description.length > 155 ? trauncateText(item.description) : item.description,
   });
   const textPhotographer = createElement('p', {
     innerHTML: `Photographer: ${item.photographer}`,
   });
 
-  const commentsTitle = createElement('h2', {
-    class: 'comments-title',
-    innerHTML: `Comments (CAMBIAR)`,
-  });
 
   const commentsWrapper = createElement('div', { class: 'comments-wrapper' });
   const commentList = createElement('ul', { class: 'comment-list' });
   const form = createElement('form');
   const addAComment = createElement('h2', { textContent: 'Add a Comment' });
-  const inputWrapper = createElement('div', { class: 'input-wrapper' });
   const inputUsername = createElement('input', {
     class: 'input-username',
-    // PUT AN ID
     placeholder: 'Your Name',
   });
   const inputDescription = createElement('textarea', {
     id: 'input-description',
-    // PUT AN ID
     placeholder: 'Your insights',
+  });
+  const commentsTitle = createElement('h2', {
+    class: 'comments-title',
+    innerHTML: ``,
   });
   const publishCommentButton = createElement('button', {
     id: 'publish-comment-button',
@@ -69,13 +65,51 @@ export default function createCommentPopup(item) {
   popupCommentsBack.append(popupComments);
   popupCommentsBack.style.display = 'block';
 
+  const displayComments = async () => {
+    const commentCounter = await retreiveData(item.nasa_id);
+    if (commentCounter.length === undefined) {
+      const numberOfComments = createElement('span', {
+        class: 'comments-title',
+        innerHTML: `Comments 0`,
+      });
+      commentsTitle.append(numberOfComments);
+
+    } else {
+
+      const numberOfComments = createElement('span', {
+        class: 'comments-title',
+        innerHTML: `Comments ${commentCounter.length}`,
+      });
+      commentsTitle.append(numberOfComments);
+    }
+
+
+    const getComments = await retreiveData(item.nasa_id);
+    commentList.innerHTML = '';
+    getComments.forEach(function(commentary) {
+      const commentItem = createElement('li', {
+        innerHTML: `
+      <span id='comment-date-${item.nasa_id}'>${commentary.creation_date}</span> - 
+      <span id='comment-user-${item.nasa_id}'>${commentary.username}</span>
+      <div id='comment-content-${item.nasa_id}'>${commentary.comment}</div>
+      `,
+      });
+      commentList.append(commentItem);
+    });
+
+
+    return getComments, commentsTitle;
+  };
+
+  displayComments();
+
+
+
   document.addEventListener('click', (e) => {
     const target = e.target.closest(`#popup-comments-close-button`);
 
     if (target) {
-      console.log("Boton cerrar presionado");
       popupCommentsBack.style.display = 'none';
-      // contentWrapper.innerHTML = '';
     }
   });
 
@@ -84,13 +118,15 @@ export default function createCommentPopup(item) {
 
     if (target) {
       e.preventDefault();
-      console.log("Boton comment presionado");
       const nasaID = item.nasa_id;
       const newUser = inputUsername.value;
       const newDescription = inputDescription.value;
-      await submitComment(nasaID, newUser, newDescription);
       inputUsername.value = '';
       inputDescription.value = '';
+      setTimeout(() => {
+        displayComments();
+      }, "1000");
+      await submitComment(nasaID, newUser, newDescription);
     }
   })
 

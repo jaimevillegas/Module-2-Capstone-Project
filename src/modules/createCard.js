@@ -1,6 +1,7 @@
 import { createElement, trauncateText } from './utils.js';
 import displayComments from '../showComments.js';
 import createCommentPopup from './createCommentsPopup.js';
+import { retreiveData } from '../involvementAPI.js';
 
 const contentWrapper = document.querySelector('.content-wrapper');
 
@@ -36,7 +37,7 @@ export default function createCard(item) {
   const comment = createElement('div', {
     class: 'icon',
     id: `comments-button-${item.nasa_id}`,
-    innerHTML: `<i class="fa-regular fa-comment"></i>32`,
+    innerHTML: `<i class="fa-regular fa-comment"></i> `,
   });
   interactions.append(like, comment);
   info.append(title, description, interactions);
@@ -51,10 +52,26 @@ export default function createCard(item) {
     }
   });
 
-  // commentsButton.addEventListener('click', () => {
-  //   document.querySelector('.popup-comments-back').style.display = 'block';
-  //   displayComments();
-  // });
+  const displayComments = async () => {
+    const commentCounter = await retreiveData(item.nasa_id);
+    if (commentCounter.length === undefined) {
+      const numberOfComments = createElement('span', {
+        class: 'comments-counter',
+        innerHTML: `0`,
+      });
+      comment.append(numberOfComments);
+
+    } else {
+
+      const numberOfComments = createElement('span', {
+        class: 'comments-counter',
+        innerHTML: `${commentCounter.length}`,
+      });
+      comment.append(numberOfComments);
+    }
+  }
+
+  displayComments();
 
   return card;
 }
