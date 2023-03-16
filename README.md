@@ -22,11 +22,13 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 WebPack Template <a name="about-project"></a>
+# 📖 NASAverse - Explore the Universe <a name="about-project"></a>
 
-**WebPack Template** A pre built template to quickly setup a Webpack based project.
+**NASAverse - Explore the Universe** is a web gallery that allows users to explore images of planets and galaxies from NASA images archive API. It lets the user
+add comments and add likes for the items of the gallery, making it more interactive. This project is part of the Capstone project of the Module 2 of Microverse
 
 ## 🛠 Built With <a name="built-with"></a>
+
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -44,6 +46,8 @@
   <ul>
     <li>WebPack</li>
     <li>Node js</li>
+    <li>NASA Images API</li>
+    <li>Microverse Involvement API</li>
   </ul>
 </details>
 
@@ -58,8 +62,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Pre built**
-- **Clone and go**
+- Shows a dynamic gallery of images based on the category selected.
+- It let users to add likes to a particular image.
+- It let users to add and read comments.
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
@@ -67,7 +72,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- N/A
+- Currently we do not have a live demo version for this project. Soon we will let you know when it's available.
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
@@ -90,7 +95,7 @@ In order to run this project you need to:
 Clone the repo into your local machine:
 
 ```bash
-git clone https://github.com/BahirHakimy/WebPack-template.git
+git clone https://github.com/BahirHakimy/Module-2-Capstone-Project
 ```
 
 Install the dependencies using npm:
@@ -102,7 +107,7 @@ npm install
 
 To start the development server run
 ```bash
-npm start
+npm run start
 ```
 - this command will start the development server on `localhost:8080` address
 
@@ -125,13 +130,20 @@ npm run build
 - [<img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" width='20'/> Email](mailto:bahirhakimy2015@gmail.com)
 - [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png" width='20'/> Twitter](https://twitter.com/bahir_hakimy)
 
+👤 **Jaime Villegas**
+
+- GitHub: [@githubhandle](https://github.com/jaimevillegas)
+- Twitter: [@jaimevillegazz](https://twitter.com/JaimeVillegazz)
+- LinkedIn: [Villegas0296](https://www.linkedin.com/in/villegas0296/)
+- Medium: [@jaimevillegas296](https://medium.com/@jaimevillegas296)
+
 <p align="right"><a href="#readme-top">👆</a></p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **N/A**
+- Add Reservation Functionality
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
@@ -157,7 +169,7 @@ If you like this project leave a start for it.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for helping me in my journey to become a Fullstack developer 🌹
+I would like to thank Microverse for helping us in the journey to become a Fullstack developer 🌹
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
