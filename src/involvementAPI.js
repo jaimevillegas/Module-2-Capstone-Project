@@ -48,7 +48,6 @@ const getLikes = async (itemID) => {
   return itemID ? data.find((like) => like.item_id === itemID) : data;
 };
 
-
 // FUNCTION TO ADD A LIKE
 
 export {

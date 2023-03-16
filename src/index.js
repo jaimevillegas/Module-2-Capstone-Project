@@ -1,6 +1,5 @@
 import './style.css';
 import './loader.css';
-import displayComments from './showComments.js';
 import { $ } from './modules/utils.js';
 import getData from './modules/nasaApi.js';
 import createCard from './modules/createCard.js';
