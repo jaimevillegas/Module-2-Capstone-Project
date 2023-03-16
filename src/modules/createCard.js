@@ -32,7 +32,7 @@ export default function createCard(item) {
   const interactions = createElement('div', { class: 'interactions' });
   const like = createElement('div', {
     class: 'icon',
-    innerHTML: `<i class="fa-regular fa-heart"></i>240`,
+    innerHTML: '<i class="fa-regular fa-heart"></i>240',
   });
   const comment = createElement('div', {
     class: 'icon',

@@ -16,9 +16,9 @@ const submitComment = async (itemID, username, commentDescription) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      'item_id': itemID,
-      'username': username,
-      'comment': commentDescription,
+      item_id: itemID,
+      username,
+      comment: commentDescription,
     }),
   });
   const data = await response.json();
@@ -41,7 +41,5 @@ const getLikes = async () => {
 // FUNCTION TO ADD A LIKE
 
 export {
-  retreiveData,
-  submitComment,
-  getLikes,
+  retreiveData, submitComment, getLikes, filterLikes,
 };
