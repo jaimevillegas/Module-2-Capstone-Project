@@ -269,20 +269,19 @@ h1 span {
   z-index: 2;
   border-radius: 8px;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 80%;
-  margin: 5%;
-  height: 75vh;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90vh;
   padding: 40px;
   overflow-y: auto;
 }
 
 .popup-comments .fa-circle-xmark {
   font-size: 2rem;
-  position: absolute;
-  right: 5%;
-  top: 5%;
+  position: fixed;
+  right: 10%;
+  top: 10%;
   cursor: pointer;
   color: var(--light-gray);
 }
@@ -293,17 +292,23 @@ h1 span {
 
 #image-title {
   margin-top: 20px;
+  text-align: center;
   font-size: 2rem;
   color: var(--light-gray);
 }
 
 .popup-comments img {
   display: block;
-  height: 300px;
+  max-height: 400px;
+  max-width: 90%;
+  margin: 50px auto;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px black;
 }
 
 .popup-comments p {
   color: var(--light-gray);
+  line-height: 24px;
   padding-top: 20px;
   margin: 0 auto;
   width: 80%;

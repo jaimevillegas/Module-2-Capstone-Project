@@ -8,11 +8,6 @@ import cardsCounter from './modules/cardsCounter.js';
 import { getLikes } from './involvementAPI.js';
 import combineData from './modules/combineData.js';
 
-const commentsButton = document.getElementById('comments-button');
-const popupCommentsCloseButton = document.getElementById(
-  'popup-comments-close-button',
-);
-
 const fetch = async (options = { title: 'Earth' }, clean = false) => {
   $('#loader-container').style.display = 'flex';
   if (clean) $('#cards').innerHTML = '';
@@ -70,12 +65,3 @@ const init = async () => {
 window.onload = async () => {
   init();
 };
-
-popupCommentsCloseButton.addEventListener('click', () => {
-  document.querySelector('.popup-comments-back').style.display = 'none';
-});
-
-commentsButton.addEventListener('click', () => {
-  document.querySelector('.popup-comments-back').style.display = 'block';
-  displayComments();
-});
