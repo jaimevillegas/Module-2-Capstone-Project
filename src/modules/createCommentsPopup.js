@@ -2,7 +2,9 @@ import { retreiveData, submitComment } from '../involvementAPI.js';
 import { createElement } from './utils.js';
 
 export default function createCommentPopup(item) {
-  const popupCommentsBack = createElement('section', { class: `popup-comments-back popup-comments-back-${item.nasa_id}` });
+  const popupCommentsBack = createElement('section', {
+    class: `popup-comments-back popup-comments-back-${item.nasa_id}`,
+  });
   const popupComments = createElement('section', { class: 'popup-comments' });
   const image = createElement('img', {
     src: item.image,
@@ -10,8 +12,7 @@ export default function createCommentPopup(item) {
   });
   const imageTitle = createElement('h2', {
     id: 'image-title',
-    textContent:
-      item.title,
+    textContent: item.title,
     title: item.title,
   });
   const closeButton = createElement('i', {
@@ -20,8 +21,7 @@ export default function createCommentPopup(item) {
   });
   const imageDescription = createElement('p', {
     id: 'image-description',
-    textContent:
-      item.description,
+    textContent: item.description,
   });
   const textPhotographer = createElement('p', {
     innerHTML: `Photographer: ${item.photographer}`,
@@ -47,11 +47,13 @@ export default function createCommentPopup(item) {
     id: 'publish-comment-button',
     textContent: 'Comment',
   });
-  form.append(addAComment, inputUsername, inputDescription, publishCommentButton);
-  commentsWrapper.append(
-    commentList,
-    form,
+  form.append(
+    addAComment,
+    inputUsername,
+    inputDescription,
+    publishCommentButton,
   );
+  commentsWrapper.append(commentList, form);
   popupComments.append(
     image,
     imageTitle,
