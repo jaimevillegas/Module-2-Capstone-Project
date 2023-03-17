@@ -72,7 +72,9 @@ add comments and add likes for the items of the gallery, making it more interact
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Currently we do not have a live demo version for this project. Soon we will let you know when it's available.
+- You can enter the website using the following link:
+
+[Live-Demo](https://jaimevillegas.github.io/Module-2-Capstone-Project/)
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
