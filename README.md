@@ -27,6 +27,12 @@
 **NASAverse - Explore the Universe** is a web gallery that allows users to explore images of planets and galaxies from NASA images archive API. It lets the user
 add comments and add likes for the items of the gallery, making it more interactive. This project is part of the Capstone project of the Module 2 of Microverse
 
+## Explanatory Video
+
+You can enter this link to watch the explanatory video of the project!
+
+[Video](https://drive.google.com/file/d/1NOYyx1xunIDejqXCB2aeo93kz5cSYsqM/view?usp=sharing)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 
