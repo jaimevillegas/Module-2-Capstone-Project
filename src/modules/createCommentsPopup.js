@@ -80,6 +80,7 @@ export default function createCommentPopup(item) {
         class: 'comments-title',
         innerHTML: `Comments ${commentCounter.length}`,
       });
+      commentsTitle.innerHTML = '';
       commentsTitle.append(numberOfComments);
     }
 
