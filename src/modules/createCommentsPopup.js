@@ -1,3 +1,4 @@
+// import { $ } from './utils.js';
 import { retreiveData, submitComment } from '../involvementAPI.js';
 import { createElement } from './utils.js';
 
@@ -51,7 +52,7 @@ export default function createCommentPopup(item) {
     addAComment,
     inputUsername,
     inputDescription,
-    publishCommentButton
+    publishCommentButton,
   );
   commentsWrapper.append(commentList, form);
   popupComments.append(
@@ -61,7 +62,7 @@ export default function createCommentPopup(item) {
     imageDescription,
     textPhotographer,
     commentsTitle,
-    commentsWrapper
+    commentsWrapper,
   );
   popupCommentsBack.append(popupComments);
   popupCommentsBack.style.display = 'block';
@@ -84,18 +85,22 @@ export default function createCommentPopup(item) {
 
     const getComments = await retreiveData(item.nasa_id);
     commentList.innerHTML = '';
-    getComments.forEach((commentary) => {
-      const commentItem = createElement('li', {
-        innerHTML: `
+    if (Array.isArray(getComments)) {
+      getComments.forEach((commentary) => {
+        const commentItem = createElement('li', {
+          class: 'commentary-item',
+          innerHTML: `
       <span id='comment-date-${item.nasa_id}'>${commentary.creation_date}</span> - 
       <span id='comment-user-${item.nasa_id}'>${commentary.username}</span>
       <div id='comment-content-${item.nasa_id}'>${commentary.comment}</div>
       `,
+        });
+        commentList.append(commentItem);
       });
-      commentList.append(commentItem);
-    });
 
-    return { getComments, commentsTitle };
+      return getComments;
+    }
+    return 1;
   };
 
   displayComments();

@@ -6,7 +6,7 @@ const appID = 'lYZ9ZtHh76XKuPy6HAWO';
 const retreiveData = async (itemID) => {
   const response = await fetch(`${url}apps/${appID}/comments?item_id=${itemID}`);
   const data = await response.json();
-  return data;
+  return data || [];
 };
 
 const submitComment = async (itemID, username, commentDescription) => {
