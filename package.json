@@ -9,9 +9,6 @@
     "watch": "jest --watch --env=jsdom",
     "build": "webpack",
     "eslint": "npx eslint . --fix",
-    "eslintIgnore": [
-      "commentsCounter.js"
-    ],
     "stylelint": "npx stylelint ./**/*.css --fix"
   },
   "repository": {

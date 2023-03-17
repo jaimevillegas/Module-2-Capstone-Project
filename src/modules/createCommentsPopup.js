@@ -52,7 +52,7 @@ export default function createCommentPopup(item) {
     addAComment,
     inputUsername,
     inputDescription,
-    publishCommentButton
+    publishCommentButton,
   );
   commentsWrapper.append(commentList, form);
   popupComments.append(
@@ -62,7 +62,7 @@ export default function createCommentPopup(item) {
     imageDescription,
     textPhotographer,
     commentsTitle,
-    commentsWrapper
+    commentsWrapper,
   );
   popupCommentsBack.append(popupComments);
   popupCommentsBack.style.display = 'block';
