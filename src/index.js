@@ -48,10 +48,10 @@ const init = async () => {
       $('#load-more').style.display = 'none';
       const title = ev.target.textContent;
       const data = await fetch({ title }, true);
-      render(data);
       $('.active').innerHTML = '';
       $('.active').classList.remove('active');
       link.firstElementChild.classList.add('active');
+      render(data);
     });
   });
   $('#load-more').addEventListener('click', () => {
