@@ -96,6 +96,7 @@ export default function createCommentPopup(item) {
       <div id='comment-content-${item.nasa_id}'>${commentary.comment}</div>
       `,
         });
+        commentList.innerHTML = '';
         commentList.append(commentItem);
       });
 
