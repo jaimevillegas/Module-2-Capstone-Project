@@ -52,7 +52,7 @@ export default function createCommentPopup(item) {
     addAComment,
     inputUsername,
     inputDescription,
-    publishCommentButton,
+    publishCommentButton
   );
   commentsWrapper.append(commentList, form);
   popupComments.append(
@@ -62,7 +62,7 @@ export default function createCommentPopup(item) {
     imageDescription,
     textPhotographer,
     commentsTitle,
-    commentsWrapper,
+    commentsWrapper
   );
   popupCommentsBack.append(popupComments);
   popupCommentsBack.style.display = 'block';
@@ -74,14 +74,12 @@ export default function createCommentPopup(item) {
         class: 'comments-title',
         innerHTML: 'Comments 0',
       });
-      commentsTitle.innerHTML = '';
       commentsTitle.append(numberOfComments);
     } else {
       const numberOfComments = createElement('span', {
         class: 'comments-title',
         innerHTML: `Comments ${commentCounter.length}`,
       });
-      commentsTitle.innerHTML = '';
       commentsTitle.append(numberOfComments);
     }
 
